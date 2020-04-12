@@ -1,5 +1,5 @@
 import React, { Component, useState } from 'react';
-import {Text, View, StyleSheet, Picker} from 'react-native'
+import {Text, View, StyleSheet, Picker, Dimensions} from 'react-native'
 import { Ionicons } from '@expo/vector-icons';
 import StarRating from 'react-native-star-rating';
 
@@ -10,6 +10,8 @@ const TabIcon = (props) => (
     color={props.focused ? 'blue' : 'gray'}
   />
 )
+
+const deviceWidth = Dimensions.get('window').width;
 
 class AddSymptoms extends Component{
     constructor(props){
@@ -95,7 +97,9 @@ const styles = StyleSheet.create({
         flex: 1,
         paddingTop: 40,
         alignItems: "center",
-        padding : 10
+        padding : 10,
+        width: deviceWidth
+
     },
     welcome : {
         fontSize : 20,
